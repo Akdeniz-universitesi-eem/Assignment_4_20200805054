@@ -22,10 +22,10 @@ public static boolean isValid(String pass){
 }
  public static void main(String[] Sinan){
 boolean control=false;
-  String password=" K";
- while(control==false) {
+  String password=" K";  // şifremizin geleceği string değer
+ while(control==false) {  // şifrenin yanlış gelmesi durumunda döngüyü başa sarar
 
- String message = """
+ String message = """  
          • Password must be at least 8 and at most 95 characters
          • Must contain at least 1 letter
          • Must contain at least 1 number
@@ -33,7 +33,10 @@ boolean control=false;
          • Must contain at least 1 special character(!%+@-_}=)         \s""";
 
   password= JOptionPane.showInputDialog(null, message, "Enter a new password below", JOptionPane.QUESTION_MESSAGE);
-   control=isValid(password);
+
+  control=isValid(password); // fonksiyona gidip kontrol yapar.
+
+  // her hangi bir koşul sağlanmazsa kullanıcıya kuralları yeniden hatırlatır ve döngü başa döner
   if (control==false) {
    JOptionPane.showMessageDialog(null, "Password is not valid! The password must comply with the following rules.:\n"
            + "• Password must be at least 8 and at most 95 characters\n"
@@ -42,6 +45,7 @@ boolean control=false;
            + "• Cannot have leading or trailing spaces\n"
            + "• Must contain at least 1 special character(!%+@-_}=)"); }
    }
+  // her koşul sağlandığında döngü biter ve ekrana şifreyi yazar.
   JOptionPane.showMessageDialog(null, "Your password has been saved. Your password :" + password);
 }
 }
