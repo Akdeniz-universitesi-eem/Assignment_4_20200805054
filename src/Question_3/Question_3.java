@@ -38,12 +38,13 @@ boolean control=false;
 
   // her hangi bir koşul sağlanmazsa kullanıcıya kuralları yeniden hatırlatır ve döngü başa döner
   if (control==false) {
-   JOptionPane.showMessageDialog(null, "Password is not valid! The password must comply with the following rules.:\n"
-           + "• Password must be at least 8 and at most 95 characters\n"
-           + "• Must contain at least 1 letter\n"
-           + "• Must contain at least 1 number\n"
-           + "• Cannot have leading or trailing spaces\n"
-           + "• Must contain at least 1 special character(!%+@-_}=)"); }
+   JOptionPane.showMessageDialog(null, """
+           Password is not valid! The password must comply with the following rules.
+           • Password must be at least 8 and at most 95 characters
+           • Must contain at least 1 letter
+           • Must contain at least 1 number
+           • Cannot have leading or trailing spaces
+           • Must contain at least 1 special character(!%+@-_}=)"""); }
    }
   // her koşul sağlandığında döngü biter ve ekrana şifreyi yazar.
   JOptionPane.showMessageDialog(null, "Your password has been saved. Your password :" + password);
